@@ -3,8 +3,8 @@ Description= kong service
 After=syslog.target network.target
 
 [Service]
-User=daemon
-Group=daemon
+User=root
+Group=root
 Type=forking
 ExecStart=/usr/local/bin/kong start -c /usr/local/kong/conf/kong.conf
 ExecReload=/usr/local/bin/kong reload -c /usr/local/kong/conf/kong.conf
