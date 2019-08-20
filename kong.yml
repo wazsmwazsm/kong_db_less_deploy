@@ -1,0 +1,14 @@
+# example config, you can change it refer kong doc
+_format_version: "1.1"
+
+services:
+ - name: your-service-name
+   host: 127.0.0.1
+   port: 4000
+   protocol: http
+   routes:
+   - name: your-route-name
+     protocols: ["http"]
+     methods: ["GET", "POST"]
+     hosts: ["test.com", "a.test.com"]
+     paths: ["/", "/test"]
