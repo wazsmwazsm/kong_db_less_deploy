@@ -24,6 +24,7 @@ read -r -p "Delete all file? [Y/n] " input
 case $input in
     [yY][eE][sS]|[yY])
 		rm -rf /usr/local/kong/
+        rpm -e kong
 		echo "=====> file deleted"
 		;;
 
