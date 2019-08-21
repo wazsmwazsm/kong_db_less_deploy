@@ -1,5 +1,7 @@
 # Kong DB-less deploy
 
+For centos7 or Ubuntu18.04
+
 ### step 1
 
 ```bash
