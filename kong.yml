@@ -8,7 +8,7 @@ services:
    protocol: http
    routes:
    - name: your-route-name
+     strip_path: false
      protocols: ["http"]
      methods: ["GET", "POST"]
-     hosts: ["test.com", "a.test.com"]
      paths: ["/", "/test"]
