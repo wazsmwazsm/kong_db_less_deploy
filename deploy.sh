@@ -1,12 +1,8 @@
 #!/bin/bash
 
-echo "=====> cteate dir..."
-mkdir -p /usr/local/kong/conf/
-echo "=====> dir cteated"
-
 echo "=====> copy config file..."
-cp kong.conf /usr/local/kong/conf/
-cp kong.yml /usr/local/kong/conf/
+cp kong.conf /etc/kong/
+cp kong.yml /etc/kong/
 echo "=====> config file copied"
 
 echo "=====> create service..."

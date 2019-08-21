@@ -6,8 +6,8 @@ After=syslog.target network.target
 User=root
 Group=root
 Type=forking
-ExecStart=/usr/local/bin/kong start -c /usr/local/kong/conf/kong.conf
-ExecReload=/usr/local/bin/kong reload -c /usr/local/kong/conf/kong.conf
+ExecStart=/usr/local/bin/kong start -c /etc/kong/kong.conf
+ExecReload=/usr/local/bin/kong reload -c /etc/kong/kong.conf
 ExecStop=/usr/local/bin/kong stop
 
 [Install]
