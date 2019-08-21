@@ -1,5 +1,12 @@
 #!/bin/bash
 
+sys=$1
+
+if [[ $sys = "" ]]; then
+    echo "Please enter system type (ubuntu\centos)"
+    exit
+fi
+
 echo "kong purge..."
 # stop serve
 read -r -p "Stop serve? [Y/n] " input
@@ -23,7 +30,11 @@ esac
 read -r -p "Delete all file? [Y/n] " input
 case $input in
     [yY][eE][sS]|[yY])
-        rpm -e kong
+        if [ $sys = "ubuntu" ]; then
+            dpkg -r kong
+        elif [ $sys = "centos" ]; then
+            rpm -e kong
+        fi
 		rm -rf /usr/local/kong/
 		echo "=====> file deleted"
 		;;
