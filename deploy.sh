@@ -4,10 +4,6 @@ echo "=====> cteate dir..."
 mkdir -p /usr/local/kong/conf/
 echo "=====> dir cteated"
 
-echo "=====> dir authorize..."
-chown -R daemon:daemon /usr/local/kong/
-echo "=====> dir authorized"
-
 echo "=====> copy config file..."
 cp kong.conf /usr/local/kong/conf/
 cp kong.yml /usr/local/kong/conf/
