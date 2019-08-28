@@ -2,13 +2,22 @@
 _format_version: "1.1"
 
 services:
- - name: your-service-name
-   host: 127.0.0.1
-   port: 4000
-   protocol: http
-   routes:
-   - name: your-route-name
-     strip_path: false
-     protocols: ["http"]
-     methods: ["GET", "POST"]
-     paths: ["/", "/test"]
+- name: admin
+  host: 127.0.0.1
+  port: 8001
+  protocol: http
+  routes:
+  - name: admin-route
+    methods: ["GET", "POST"]
+    protocols: ["http"]
+    hosts: ["admin.kong"]
+  plugins:
+  - name: key-auth
+    config:
+      hide_credentials: true
+
+consumers:
+- username: admin
+  keyauth_credentials:
+  # kongadmin 的 sha1
+  - key: ea2a68059a17cf70743bf614a713783540261b00
