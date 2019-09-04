@@ -2,12 +2,12 @@
 _format_version: "1.1"
 
 services:
-- name: admin
+- name: admin.service
   host: 127.0.0.1
   port: 8001
   protocol: http
   routes:
-  - name: admin-route
+  - name: admin.route
     methods: ["GET", "POST"]
     protocols: ["http"]
     hosts: ["admin.kong"]
