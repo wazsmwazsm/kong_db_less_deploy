@@ -9,6 +9,7 @@ Type=forking
 ExecStart=/usr/local/bin/kong start -c /etc/kong/kong.conf
 ExecReload=/usr/local/bin/kong reload -c /etc/kong/kong.conf
 ExecStop=/usr/local/bin/kong stop
+Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
